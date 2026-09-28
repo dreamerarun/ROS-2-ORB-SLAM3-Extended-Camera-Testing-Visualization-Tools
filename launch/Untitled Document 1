@@ -1,0 +1,15 @@
+cd ~/ros2_test
+source install/setup.bash
+
+# Launch everything
+ros2 launch ros2_orb_slam3 slam_with_rviz2.launch.py camera_id:=4
+
+cd ~/ros2_test
+source install/setup.bash
+python3 src/ros2_orb_slam3/scripts/space_bar.py --ros-args -p settings_name:=Webcam_Sensitive -p camera_id:=4
+
+cd ~/ros2_test
+source install/setup.bash
+python3 src/ros2_orb_slam3/scripts/slam_to_rviz2.py
+
+
